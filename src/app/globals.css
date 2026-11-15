@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-dark: #080B0E;
+    --brand-charcoal: #12171D;
+    --brand-surface: #182028;
+    --brand-border: #242E38;
+    --brand-gold: #C5A880;
+    --brand-gold-light: #DFC7A5;
+    --brand-gold-dark: #9E8159;
+    --brand-emerald: #10B981;
+    --brand-cream: #F8F6F0;
+    --brand-muted: #8E9BAE;
+    --brand-card: rgba(18, 23, 29, 0.75);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--brand-dark);
+    color: #EDEDED;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: var(--brand-gold);
+    selection-color: #080B0E;
+  }
+
+  ::selection {
+    background-color: #C5A880;
+    color: #080B0E;
+  }
+}
+
+/* Custom Luxury Gradients & Backgrounds */
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #DFCAAB 0%, #C5A880 50%, #A6875C 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F3E5D0 0%, #C5A880 50%, #9F8257 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 50%, #9CA3AF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(197, 168, 128, 0.25);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  box-shadow: 0 0 20px rgba(197, 168, 128, 0.15);
+}
+
+.glass-panel {
+  background: rgba(18, 23, 29, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-gold {
+  background: rgba(18, 23, 29, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.glass-panel-interactive {
+  background: rgba(18, 23, 29, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(24, 32, 40, 0.85);
+  border-color: rgba(197, 168, 128, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080B0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242E38;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Luxury Card Shimmer */
+@keyframes luxuryShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(197,168,128,0.1) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: luxuryShimmer 4s infinite;
+}
+
+/* Badge Pulsing */
+@keyframes emeraldPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+.pulse-dot {
+  animation: emeraldPulse 2.5s infinite ease-in-out;
+}
+
+/* Respect user's reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .shimmer-bg {
+    animation: none;
+    background: rgba(197, 168, 128, 0.05);
+  }
+
+  .pulse-dot {
+    animation: none;
+  }
+
+  .glass-panel-interactive:hover {
+    transform: none;
+  }
+}
