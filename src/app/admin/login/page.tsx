@@ -42,7 +42,7 @@ export default function AdminLoginPage() {
   return (
     <div className="py-20 bg-[#080B0E] min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md p-8 sm:p-10 bg-[#0E1217] border border-[#242A35] space-y-6 shadow-2xl">
-        
+
         {/* Header */}
         <div className="text-center space-y-2">
           <div className="w-12 h-12 bg-[#141820] border border-white/10 text-[#C5A880] mx-auto flex items-center justify-center">

@@ -1,5 +1,5 @@
-import { Property, BookingRequest, GalleryItem, ContactMessage } from '../types';
-import { INITIAL_PROPERTIES, GALLERY_ITEMS } from './properties';
+import { Property, BookingRequest, GalleryItem, ContactMessage, LocationHub } from '../types';
+import { INITIAL_PROPERTIES, GALLERY_ITEMS, LOCATION_HUBS } from './properties';
 import { supabase, isSupabaseConfigured } from '../supabase/client';
 
 // In-memory fallback stores
@@ -103,6 +103,20 @@ export async function getPropertyBySlug(slug: string): Promise<Property | null> 
 export async function getFeaturedProperties(): Promise<Property[]> {
   const all = await getProperties();
   return all.filter((p) => p.featured);
+}
+
+export async function getLocationHubs(): Promise<LocationHub[]> {
+  return LOCATION_HUBS;
+}
+
+export async function getLocationHubBySlug(slug: string): Promise<LocationHub | null> {
+  const hub = LOCATION_HUBS.find((h) => h.slug === slug);
+  return hub || null;
+}
+
+export async function getPropertiesByNeighborhood(neighborhood: string): Promise<Property[]> {
+  const all = await getProperties();
+  return all.filter((p) => p.neighborhood.toLowerCase() === neighborhood.toLowerCase());
 }
 
 // Booking Requests Management

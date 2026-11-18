@@ -10,6 +10,7 @@
 21st Century Apartments is a commercial-grade, production-ready web application built for a premier Nigerian luxury hospitality brand. Engineered specifically for the Nigerian business context, the platform delivers an architectural, editorial experience with instant booking calculations, WhatsApp concierge integration, ₦ (Naira) currency formatting, multi-office operations desks, verified guest reviews, and a non-technical staff CMS.
 
 ### Core Business Specifications
+
 - **Brand Descriptor:** 21st Century Apartments in | Ikeja | Lekki | Eko Atlantic | Lagos
 - **Headquarters:** Eko Atlantic Boulevard, Victoria Island / Eti-Osa, Lagos, Nigeria
 - **Direct Phone:** `+234 817 611 5993`
@@ -33,17 +34,20 @@
 ## 🚀 Key Features
 
 ### 1. Architectural Editorial Design
+
 - Custom luxury aesthetic with midnight charcoal `#080B0E`, refined bronze-gold `#C5A880`, and warm ivory typography.
 - Zero generic boilerplate: strictly angular, intentional lines, high-contrast photography, and subtle micro-interactions.
 - Full compliance with `prefers-reduced-motion` for accessibility.
 
 ### 2. Nigerian Hospitality UX
+
 - **Live ₦ (Naira) Pricing & Instant Quoting:** Transparent calculation of nightly rates, refundable caution deposits, sanitization fees, and optional add-ons (VIP MMIA Airport Chauffeur, Private In-House Chef).
 - **Direct WhatsApp Concierge:** Pre-populated, formatted WhatsApp deep links with apartment title, check-in/out dates, guest count, and calculated totals for Nigerian travelers who prefer conversational booking.
 - **Physical Operations Footprint:** Dedicated operations cards and direct navigation for 4 strategic Lagos hubs (Eko Atlantic Flagship, VI Walter Carrington Desk, Lekki Admiralty Desk, Ikeja GRA Isaac John Desk).
 - **One-Tap Mobile Actions:** Floating VIP concierge button and sticky mobile navigation (`Call Desk`, `WhatsApp`, `Directions`, `Check Availability`).
 
 ### 3. Comprehensive Data & Admin CMS
+
 - **Protected Operations Portal:** `/admin` dashboard for reservation management, availability toggles, inline price overrides, gallery additions, and customer enquiries.
 - **Dual-Mode Persistence:** Supabase PostgreSQL with RLS policies, coupled with robust in-memory fallbacks ensuring zero 500 crashes even before database keys are provisioned.
 
@@ -83,6 +87,7 @@
 ## 🛠️ Getting Started
 
 ### 1. Installation
+
 ```bash
 git clone https://github.com/your-username/21st-century-apartments.git
 cd 21st-century-apartments
@@ -90,24 +95,31 @@ npm install
 ```
 
 ### 2. Environment Variables
+
 Copy `.env.example` to `.env.local`:
+
 ```bash
 cp .env.example .env.local
 ```
+
 Fill in your Supabase project credentials (optional for initial local development, as the in-memory fallback will automatically activate).
 
 ### 3. Database Setup (Supabase)
+
 Run the migration script provided in [`src/lib/supabase/schema.sql`](file:///c:/Users/user/Documents/21ST%20CENTURY/src/lib/supabase/schema.sql) in your Supabase SQL Editor.
 
 ### 4. Running Locally
+
 ```bash
 npm run dev
 ```
+
 Visit `http://localhost:3000` to preview the site.
 
 ---
 
 ## 🔒 Admin CMS Access
+
 - **URL:** `/admin/login`
 - **Default Email:** `admin@21stcenturyapartments.ng`
 - **Default Password:** `LagosLuxury2026!`

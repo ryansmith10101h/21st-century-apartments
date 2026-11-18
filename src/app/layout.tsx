@@ -40,14 +40,17 @@ export const metadata: Metadata = {
   authors: [{ name: '21ST CENTURY APARTMENTS' }],
   creator: '21ST CENTURY APARTMENTS',
   publisher: '21st Century Serviced Apartments & Hospitality Ltd',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://21stcenturyapartments.ng'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://21st-century-apartments.vercel.app'),
   alternates: {
     canonical: '/',
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   },
   openGraph: {
     title: '21ST CENTURY APARTMENTS | Stay Above Ordinary',
     description: 'Premium short-stay serviced apartments designed for modern Lagos living across Eko Atlantic, Victoria Island, Lekki, and Ikeja. 24/7 power, Starlink internet, waterfront views.',
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://21stcenturyapartments.ng',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://21st-century-apartments.vercel.app',
     siteName: '21ST CENTURY APARTMENTS',
     images: [
       {
@@ -84,7 +87,7 @@ export default function RootLayout({
     description: 'Premium short-stay serviced apartments designed for modern Lagos living in Ikeja, Lekki, Eko Atlantic, and Victoria Island.',
     telephone: BUSINESS_CONFIG.phonePrimary,
     email: BUSINESS_CONFIG.emailPrimary,
-    url: process.env.NEXT_PUBLIC_APP_URL || 'https://21stcenturyapartments.ng',
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://21st-century-apartments.vercel.app',
     currenciesAccepted: 'NGN, USD, GBP, EUR',
     paymentAccepted: 'Cash, Credit Card, Bank Transfer',
     priceRange: '₦195,000 - ₦580,000',

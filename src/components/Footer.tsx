@@ -15,8 +15,8 @@ export default function Footer() {
               <Zap className="w-4 h-4 text-emerald-400" />
             </div>
             <div>
-              <h4 className="text-white text-xs font-semibold uppercase tracking-wider">24/7 Power</h4>
-              <p className="text-[10px] text-gray-400">Subterranean Grid + CAT Gens</p>
+              <h4 className="text-white text-xs font-semibold uppercase tracking-wider font-mono">24/7 Power</h4>
+              <p className="text-[10px] text-gray-400 font-light">Subterranean Grid + Dual CAT Gens</p>
             </div>
           </div>
 
@@ -25,8 +25,8 @@ export default function Footer() {
               <Wifi className="w-4 h-4 text-[#DFC7A5]" />
             </div>
             <div>
-              <h4 className="text-white text-xs font-semibold uppercase tracking-wider">Starlink 250Mbps</h4>
-              <p className="text-[10px] text-gray-400">Dedicated Enterprise Bandwidth</p>
+              <h4 className="text-white text-xs font-semibold uppercase tracking-wider font-mono">High-Speed WiFi</h4>
+              <p className="text-[10px] text-gray-400 font-light">Starlink Satellite & Dedicated Fiber</p>
             </div>
           </div>
 
@@ -35,8 +35,8 @@ export default function Footer() {
               <ShieldCheck className="w-4 h-4 text-[#DFC7A5]" />
             </div>
             <div>
-              <h4 className="text-white text-xs font-semibold uppercase tracking-wider">Armed Security</h4>
-              <p className="text-[10px] text-gray-400">Estate Checkpoints & Biometrics</p>
+              <h4 className="text-white text-xs font-semibold uppercase tracking-wider font-mono">Gated Security</h4>
+              <p className="text-[10px] text-gray-400 font-light">Estate Checkpoints & Monitored Access</p>
             </div>
           </div>
 
@@ -45,8 +45,8 @@ export default function Footer() {
               <Navigation className="w-4 h-4 text-[#DFC7A5]" />
             </div>
             <div>
-              <h4 className="text-white text-xs font-semibold uppercase tracking-wider">Eko Atlantic Hub</h4>
-              <p className="text-[10px] text-gray-400">Victoria Island / Eti-Osa</p>
+              <h4 className="text-white text-xs font-semibold uppercase tracking-wider font-mono">Flagship Hub</h4>
+              <p className="text-[10px] text-gray-400 font-light">Eko Atlantic Boulevard, Victoria Island</p>
             </div>
           </div>
         </div>
@@ -59,56 +59,53 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#DFC7A5] to-[#9E8159] p-[1px] flex items-center justify-center">
                 <div className="w-full h-full bg-[#080B0E] rounded-lg flex items-center justify-center">
-                  <span className="font-serif text-[#DFC7A5] font-bold text-lg">21</span>
+                  <span className="font-serif text-[#DFC7A5] font-bold text-lg tracking-wider">21</span>
                 </div>
               </div>
-              <div>
-                <span className="text-white font-serif font-bold text-base tracking-[0.2em] uppercase">
+              <div className="flex flex-col">
+                <span className="text-white font-semibold text-base tracking-[0.2em] uppercase font-serif">
                   21ST CENTURY
                 </span>
-                <p className="text-[9px] text-[#C5A880] tracking-[0.2em] uppercase font-sans">
+                <span className="text-[9px] text-[#C5A880] tracking-[0.2em] uppercase -mt-0.5 font-mono">
                   Apartments • Lagos
-                </p>
+                </span>
               </div>
             </Link>
 
             <p className="text-xs text-gray-400 leading-relaxed max-w-sm font-light">
-              21st Century Apartments in | Ikeja | Lekki | Eko Atlantic | Lagos. Premium short-term apartment rentals and serviced residences designed for modern Lagos living.
+              21st Century Apartments is a premier serviced residences operator providing architectural short stays, executive diplomatic accommodations, and waterfront penthouses across Lagos.
             </p>
 
-            <div className="pt-2 text-xs text-gray-400 space-y-1 font-mono">
-              <p>
-                <strong className="text-white font-sans">Headquarters:</strong> {BUSINESS_CONFIG.headquarters.address}, {BUSINESS_CONFIG.headquarters.city}, Nigeria
-              </p>
-              <p>
-                <strong className="text-white font-sans">Phone:</strong> {BUSINESS_CONFIG.phonePrimary}
-              </p>
+            <div className="pt-2 text-xs font-mono space-y-1 text-gray-400">
+              <p className="text-white font-medium">Headquarters & Flagship Reception:</p>
+              <p>{BUSINESS_CONFIG.headquarters.address}</p>
+              <p>{BUSINESS_CONFIG.headquarters.city}, {BUSINESS_CONFIG.headquarters.country}</p>
             </div>
           </div>
 
-          {/* Column 3: Prime Locations */}
+          {/* Column 3: Locations */}
           <div>
-            <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4 border-l border-[#C5A880] pl-2.5">
+            <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4 border-l border-[#C5A880] pl-2.5 font-mono">
               Locations
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/properties?location=Eko+Atlantic" className="hover:text-[#DFC7A5] transition-colors">
+                <Link href="/locations/eko-atlantic" className="hover:text-[#DFC7A5] transition-colors">
                   Eko Atlantic Boulevard
                 </Link>
               </li>
               <li>
-                <Link href="/properties?location=Victoria+Island" className="hover:text-[#DFC7A5] transition-colors">
+                <Link href="/locations/victoria-island" className="hover:text-[#DFC7A5] transition-colors">
                   Victoria Island Enclave
                 </Link>
               </li>
               <li>
-                <Link href="/properties?location=Lekki" className="hover:text-[#DFC7A5] transition-colors">
+                <Link href="/locations/lekki" className="hover:text-[#DFC7A5] transition-colors">
                   Admiralty Way, Lekki Phase 1
                 </Link>
               </li>
               <li>
-                <Link href="/properties?location=Ikeja" className="hover:text-[#DFC7A5] transition-colors">
+                <Link href="/locations/ikeja" className="hover:text-[#DFC7A5] transition-colors">
                   Isaac John Street, Ikeja GRA
                 </Link>
               </li>
@@ -117,9 +114,9 @@ export default function Footer() {
                   href={GOOGLE_MAPS_DIRECTIONS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[#DFC7A5] hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1 text-[#DFC7A5] hover:text-white transition-colors font-mono"
                 >
-                  <span>Get Directions</span>
+                  <span>Google Maps Directions</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
               </li>
@@ -128,13 +125,13 @@ export default function Footer() {
 
           {/* Column 4: Quick Links */}
           <div>
-            <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4 border-l border-[#C5A880] pl-2.5">
+            <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4 border-l border-[#C5A880] pl-2.5 font-mono">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
                 <Link href="/properties" className="hover:text-[#DFC7A5] transition-colors">
-                  All Apartments
+                  Residences Portfolio
                 </Link>
               </li>
               <li>
@@ -167,7 +164,7 @@ export default function Footer() {
 
           {/* Column 5: Direct Inquiries */}
           <div>
-            <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4 border-l border-[#C5A880] pl-2.5">
+            <h4 className="text-white text-xs font-semibold uppercase tracking-wider mb-4 border-l border-[#C5A880] pl-2.5 font-mono">
               Direct Contact
             </h4>
             <ul className="space-y-3 text-xs">
@@ -203,9 +200,9 @@ export default function Footer() {
               <li className="pt-2">
                 <Link
                   href="/admin"
-                  className="text-[11px] text-gray-500 hover:text-gray-300 transition-colors block"
+                  className="text-[11px] text-gray-500 hover:text-gray-300 transition-colors block font-mono"
                 >
-                  Admin / Staff Portal
+                  Admin / Operations Portal
                 </Link>
               </li>
             </ul>
@@ -214,9 +211,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright & Disclaimer */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500 font-mono">
           <p>© {new Date().getFullYear()} 21ST CENTURY APARTMENTS. All rights reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <Link href="/privacy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
+            <span>•</span>
+            <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
+            <span>•</span>
             <span>Africa/Lagos Timezone (WAT)</span>
             <span>•</span>
             <span>Prices in Nigerian Naira (₦)</span>

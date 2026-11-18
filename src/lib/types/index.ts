@@ -156,6 +156,20 @@ export interface Review {
   verifiedStay: boolean;
 }
 
+export interface LocationHub {
+  slug: string;
+  title: string;
+  badge: string;
+  neighborhood: Neighborhood;
+  address: string;
+  tagline: string;
+  description: string;
+  image: string;
+  advantages: string[];
+  metaTitle: string;
+  metaDescription: string;
+}
+
 export interface BusinessConfig {
   name: string;
   legalName: string;

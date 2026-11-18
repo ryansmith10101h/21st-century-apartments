@@ -1,4 +1,4 @@
-import { Property, Review, GalleryItem } from '../types';
+import { Property, Review, GalleryItem, LocationHub } from '../types';
 
 export const INITIAL_PROPERTIES: Property[] = [
   {
@@ -548,4 +548,79 @@ export const NEIGHBORHOODS = [
     image: 'https://images.unsplash.com/photo-1600573472591-ee6c563aaec9?auto=format&fit=crop&w=1000&q=85',
     propertyCount: 'Presidential Airport Residences',
   },
+];
+
+export const LOCATION_HUBS: LocationHub[] = [
+  {
+    slug: 'eko-atlantic',
+    title: 'Eko Atlantic Boulevard',
+    badge: 'Waterfront & Diplomatic Hub',
+    neighborhood: 'Eko Atlantic',
+    address: 'Eko Atlantic Boulevard, Victoria Island / Eti-Osa, Lagos, Nigeria',
+    tagline: 'Pioneering Coastal Architecture & Independent Municipal Infrastructure',
+    description: 'Eko Atlantic represents the architectural forefront of 21st century Lagos. Engineered on reclaimed coastal land with an independent subterranean power grid, dedicated water treatment, expansive pedestrian boulevards, and panoramic Atlantic Ocean horizons.',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=85',
+    advantages: [
+      'Independent subterranean municipal power grid with dedicated backup generators',
+      'Direct coastal waterfront views and Five Cowrie Creek marine access',
+      'Strict perimeter security clearance with 24/7 monitored gatehouses',
+      'Immediate access to Victoria Island financial institutions and diplomatic missions'
+    ],
+    metaTitle: 'Serviced Apartments in Eko Atlantic Lagos | 21st Century Apartments',
+    metaDescription: 'Book ultra-luxury short-stay serviced apartments and penthouses on Eko Atlantic Boulevard, Lagos. Independent power grid, Starlink WiFi, ocean views, and 24/7 concierge.'
+  },
+  {
+    slug: 'victoria-island',
+    title: 'Victoria Island Enclave',
+    badge: 'Corporate & Embassy District',
+    neighborhood: 'Victoria Island',
+    address: 'Walter Carrington & Ahmadu Bello Way, Victoria Island, Lagos, Nigeria',
+    tagline: 'Nigeria’s Financial Engine and Waterfront Consular Quarter',
+    description: 'Victoria Island is the diplomatic and financial heartbeat of West Africa. Positioned for multinational executives, consular delegations, and venture leaders desiring immediate proximity to major corporate headquarters, Five Cowrie Creek water channels, and upscale private dining.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85',
+    advantages: [
+      'Walking proximity to leading multinational corporate offices and foreign consulates',
+      'Direct waterfront balconies overlooking Five Cowrie Creek',
+      'Fast access to private dining clubs, art galleries, and executive meeting venues',
+      'Dedicated backup power infrastructure and Starlink satellite connectivity'
+    ],
+    metaTitle: 'Luxury Serviced Apartments in Victoria Island Lagos | 21st Century Apartments',
+    metaDescription: 'Executive short-stay accommodation and serviced suites in Victoria Island, Lagos. Quiet diplomatic enclaves, 24/7 power, and corporate travel concierge.'
+  },
+  {
+    slug: 'lekki',
+    title: 'Lekki Phase 1 Waterfront',
+    badge: 'Culinary & Lifestyle Corridor',
+    neighborhood: 'Lekki',
+    address: 'Admiralty Way, Lekki Phase 1, Lagos, Nigeria',
+    tagline: 'Vibrant Coastal Promenade Overlooking Five Cowrie Creek',
+    description: 'Lekki Phase 1 offers an energetic waterfront lifestyle along Admiralty Way. Positioned moments from the Lekki-Ikoyi Link Bridge, this corridor blends contemporary art galleries, executive culinary destinations, private jetties, and tranquil residential waterfront maisonettes.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
+    advantages: [
+      'Direct sunset views across Five Cowrie Creek and the Lekki-Ikoyi Link Bridge',
+      'Immediate access to Admiralty Way culinary establishments and artisan cafes',
+      'Private water taxi jetty connections to Victoria Island and Ikoyi',
+      'Soundproofed multi-bedroom waterfront maisonettes with private parking'
+    ],
+    metaTitle: 'Short-Stay Serviced Apartments in Lekki Phase 1 | 21st Century Apartments',
+    metaDescription: 'Waterfront luxury serviced apartments on Admiralty Way, Lekki Phase 1, Lagos. 24/7 power, high-speed Starlink WiFi, and bespoke concierge for short and extended stays.'
+  },
+  {
+    slug: 'ikeja',
+    title: 'Ikeja GRA Sanctuary',
+    badge: 'Mainland & Airport Proximity',
+    neighborhood: 'Ikeja',
+    address: 'Isaac John Street, GRA Ikeja, Lagos, Nigeria',
+    tagline: 'Canopied Avenues Minutes from Murtala Muhammed International Airport',
+    description: 'Ikeja GRA is the historic, leafy diplomatic and government reserve on the Lagos Mainland. Specially selected for transit executives, aviation specialists, and diaspora families requiring rapid, secure access to Murtala Muhammed International Airport (LOS) without island traffic.',
+    image: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85',
+    advantages: [
+      '12-minute direct transit to Murtala Muhammed International Airport (LOS)',
+      'Secure, gated residential avenue with strict access screening',
+      'Tree-lined walking streets with upscale continental and Nigerian dining',
+      'Dedicated MMIA airport protocol and chauffeur coordination on request'
+    ],
+    metaTitle: 'Executive Serviced Apartments in Ikeja GRA Lagos | 21st Century Apartments',
+    metaDescription: 'Premier short-stay executive accommodation on Isaac John Street, GRA Ikeja. Rapid airport transit, 24/7 power, Starlink internet, and presidential amenities.'
+  }
 ];

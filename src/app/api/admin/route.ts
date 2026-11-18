@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
-import { 
-  updateBookingRequestStatus, 
-  updatePropertyAvailability, 
+import {
+  updateBookingRequestStatus,
+  updatePropertyAvailability,
   updatePropertyPrice,
   createProperty,
   addGalleryItem

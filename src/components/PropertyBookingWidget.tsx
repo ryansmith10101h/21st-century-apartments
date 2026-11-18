@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Calendar, Users, ShieldCheck, Zap, MessageCircle, CreditCard, ChevronRight, CheckCircle2 } from 'lucide-react';import { Property } from '@/lib/types';
+import { Calendar, Users, ShieldCheck, Zap, MessageCircle, CreditCard, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Property } from '@/lib/types';
 import { formatNaira, generateWhatsAppBookingLink } from '@/lib/data/business-config';
 
 interface PropertyBookingWidgetProps {
@@ -60,23 +61,22 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
   );
 
   return (
-    <div id="booking-section" className="rounded-3xl bg-[#12171D] border border-[#C5A880]/40 p-6 shadow-2xl backdrop-blur-xl relative">
-      
+    <div id="booking-section" className="bg-[#0C0E12] border border-[#242A35] p-6 sm:p-7 relative shadow-2xl">
       {/* Price Header */}
       <div className="flex items-baseline justify-between pb-5 border-b border-white/10">
         <div>
-          <span className="text-[10px] uppercase tracking-widest text-[#DFC7A5] font-semibold">Nightly Rate</span>
-          <div className="text-2xl sm:text-3xl font-bold text-white font-serif tracking-tight">
+          <span className="text-[10px] uppercase tracking-widest text-[#DFC7A5] font-semibold font-mono">Nightly Rate</span>
+          <div className="text-2xl sm:text-3xl font-bold text-white font-serif tracking-tight mt-0.5">
             {formatNaira(property.pricePerNight)}
             <span className="text-xs font-normal text-gray-400 font-sans"> / night</span>
           </div>
         </div>
-        <div className="text-right">
+        <div className="text-right font-mono">
           <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
             <Zap className="w-3 h-3 fill-emerald-400" />
-            <span>Instant Confirmation</span>
+            <span>24/7 Power Included</span>
           </div>
-          <p className="text-[10px] text-gray-400 mt-0.5">VAT & Power included</p>
+          <p className="text-[10px] text-gray-400 mt-0.5">VAT & Concierge Protocol</p>
         </div>
       </div>
 
@@ -84,7 +84,7 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
       <div className="py-5 space-y-4">
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-wider font-semibold text-gray-300 flex items-center gap-1">
+            <label className="text-[10px] uppercase tracking-wider font-semibold text-gray-300 flex items-center gap-1 font-mono">
               <Calendar className="w-3 h-3 text-[#C5A880]" />
               <span>Check-in (2PM)</span>
             </label>
@@ -93,12 +93,12 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
               min={today}
               value={checkIn}
               onChange={(e) => setCheckIn(e.target.value)}
-              className="w-full bg-[#182028] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
+              className="w-full bg-[#141820] border border-white/10 px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="text-[10px] uppercase tracking-wider font-semibold text-gray-300 flex items-center gap-1">
+            <label className="text-[10px] uppercase tracking-wider font-semibold text-gray-300 flex items-center gap-1 font-mono">
               <Calendar className="w-3 h-3 text-[#C5A880]" />
               <span>Check-out (11AM)</span>
             </label>
@@ -107,24 +107,24 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
               min={checkIn || today}
               value={checkOut}
               onChange={(e) => setCheckOut(e.target.value)}
-              className="w-full bg-[#182028] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
+              className="w-full bg-[#141820] border border-white/10 px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
             />
           </div>
         </div>
 
         {/* Guests Selector */}
         <div className="space-y-1">
-          <label className="text-[10px] uppercase tracking-wider font-semibold text-gray-300 flex items-center gap-1">
+          <label className="text-[10px] uppercase tracking-wider font-semibold text-gray-300 flex items-center gap-1 font-mono">
             <Users className="w-3 h-3 text-[#C5A880]" />
-            <span>Total Guests (Max {property.maxGuests})</span>
+            <span>Guests (Max {property.maxGuests})</span>
           </label>
           <select
             value={guestCount}
             onChange={(e) => setGuestCount(Number(e.target.value))}
-            className="w-full bg-[#182028] border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
+            className="w-full bg-[#141820] border border-white/10 px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
           >
             {[...Array(property.maxGuests)].map((_, i) => (
-              <option key={i + 1} value={i + 1}>
+              <option key={i + 1} value={i + 1} className="bg-[#0C0E12] text-white">
                 {i + 1} Guest{i > 0 ? 's' : ''}
               </option>
             ))}
@@ -133,28 +133,28 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
 
         {/* VIP Add-ons Checkboxes */}
         <div className="pt-2 space-y-2 border-t border-white/5">
-          <label className="flex items-center justify-between p-2.5 rounded-xl bg-[#182028]/60 border border-white/5 cursor-pointer hover:border-[#C5A880]/30 transition-colors">
+          <label className="flex items-center justify-between p-2.5 bg-[#141820] border border-white/5 cursor-pointer hover:border-[#C5A880]/30 transition-colors">
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
                 checked={airportPickup}
                 onChange={(e) => setAirportPickup(e.target.checked)}
-                className="w-4 h-4 rounded text-[#C5A880] focus:ring-[#C5A880] bg-[#12171D] border-white/20"
+                className="w-4 h-4 text-[#C5A880] focus:ring-[#C5A880] bg-[#12171D] border-white/20"
               />
-              <span className="text-xs text-gray-200">MMIA VIP Airport Chauffeur</span>
+              <span className="text-xs text-gray-200">MMIA Airport Chauffeur Protocol</span>
             </div>
             <span className="text-[11px] text-[#DFC7A5] font-mono">+₦85,000</span>
           </label>
 
-          <label className="flex items-center justify-between p-2.5 rounded-xl bg-[#182028]/60 border border-white/5 cursor-pointer hover:border-[#C5A880]/30 transition-colors">
+          <label className="flex items-center justify-between p-2.5 bg-[#141820] border border-white/5 cursor-pointer hover:border-[#C5A880]/30 transition-colors">
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
                 checked={privateChef}
                 onChange={(e) => setPrivateChef(e.target.checked)}
-                className="w-4 h-4 rounded text-[#C5A880] focus:ring-[#C5A880] bg-[#12171D] border-white/20"
+                className="w-4 h-4 text-[#C5A880] focus:ring-[#C5A880] bg-[#12171D] border-white/20"
               />
-              <span className="text-xs text-gray-200">Private Resident Chef</span>
+              <span className="text-xs text-gray-200">Private Resident Chef Service</span>
             </div>
             <span className="text-[11px] text-[#DFC7A5] font-mono">+₦50,000/day</span>
           </label>
@@ -165,9 +165,9 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
       <div className="py-4 border-t border-white/10 space-y-2 text-xs text-gray-300">
         <div className="flex justify-between">
           <span>{formatNaira(property.pricePerNight)} × {nights} night{nights > 1 ? 's' : ''}</span>
-          <span className="font-mono">{formatNaira(subtotal)}</span>
+          <span className="font-mono text-white">{formatNaira(subtotal)}</span>
         </div>
-        
+
         <div className="flex justify-between text-gray-400">
           <span className="flex items-center gap-1">
             <span>Refundable Caution Deposit</span>
@@ -177,7 +177,7 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
         </div>
 
         <div className="flex justify-between text-gray-400">
-          <span>Cleaning & Sanitation Fee</span>
+          <span>Sanitization & Housekeeping Fee</span>
           <span className="font-mono">{formatNaira(serviceFee)}</span>
         </div>
 
@@ -190,7 +190,7 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
 
         {privateChef && (
           <div className="flex justify-between text-[#DFC7A5]">
-            <span>Private In-House Chef ({nights} days)</span>
+            <span>In-House Chef Service ({nights} days)</span>
             <span className="font-mono">{formatNaira(chefFee)}</span>
           </div>
         )}
@@ -198,8 +198,8 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
         {/* Total */}
         <div className="pt-3 mt-3 border-t border-white/10 flex justify-between items-baseline text-white">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#DFC7A5]">Estimated Total</span>
-            <p className="text-[10px] text-gray-400">(Includes Refundable Deposit)</p>
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#DFC7A5] font-mono">Estimated Total</span>
+            <p className="text-[10px] text-gray-400 font-light">(Includes Refundable Deposit)</p>
           </div>
           <div className="text-xl sm:text-2xl font-bold font-serif text-white">
             {formatNaira(grandTotal)}
@@ -211,10 +211,10 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
       <div className="pt-3 space-y-2.5">
         <button
           onClick={handleProceedToBooking}
-          className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#DFCAAB] via-[#C5A880] to-[#A6875C] hover:opacity-95 text-[#080B0E] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl hover:shadow-[#C5A880]/20 transition-all cursor-pointer"
+          className="w-full py-3.5 px-4 bg-[#C5A880] hover:bg-[#DFC7A5] text-[#080B0E] font-bold text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2 transition-all cursor-pointer"
         >
           <CreditCard className="w-4 h-4" />
-          <span>Reserve Online (Bank / Card)</span>
+          <span>Request Dates & Invoice</span>
           <ChevronRight className="w-4 h-4" />
         </button>
 
@@ -222,18 +222,21 @@ export default function PropertyBookingWidget({ property }: PropertyBookingWidge
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full py-3 px-4 rounded-xl bg-[#182028] hover:bg-[#202b36] border border-emerald-500/40 text-emerald-400 font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+          className="w-full py-3 px-4 bg-[#141820] hover:bg-[#1C222C] border border-emerald-500/40 text-emerald-400 font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors font-mono"
         >
           <MessageCircle className="w-4 h-4 text-emerald-400" />
-          <span>Reserve via WhatsApp Concierge</span>
+          <span>Inquire via WhatsApp Concierge</span>
         </a>
       </div>
 
       {/* Trust Badges */}
-      <div className="pt-4 text-center">
+      <div className="pt-4 text-center space-y-1">
         <p className="text-[10px] text-gray-400 flex items-center justify-center gap-1.5">
-          <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-          <span>No hidden fees • Full caution deposit refund within 24h</span>
+          <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+          <span>Zero instant charge • Verified availability within 15 mins</span>
+        </p>
+        <p className="text-[9px] text-gray-500 font-light">
+          Caution deposit fully refundable within 24 hours of checkout
         </p>
       </div>
     </div>

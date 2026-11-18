@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
-import { INITIAL_PROPERTIES } from '@/lib/data/properties';
+import { INITIAL_PROPERTIES, LOCATION_HUBS } from '@/lib/data/properties';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://21stcenturyapartments.ng';
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://21st-century-apartments.vercel.app';
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -15,19 +15,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/properties`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.9,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/experience`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/contact`,
@@ -41,7 +41,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
   ];
+
+  const locationRoutes: MetadataRoute.Sitemap = LOCATION_HUBS.map((hub) => ({
+    url: `${baseUrl}/locations/${hub.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }));
 
   const propertyRoutes: MetadataRoute.Sitemap = INITIAL_PROPERTIES.map((property) => ({
     url: `${baseUrl}/properties/${property.slug}`,
@@ -50,5 +69,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...propertyRoutes];
+  return [...staticRoutes, ...locationRoutes, ...propertyRoutes];
 }

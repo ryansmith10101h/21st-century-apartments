@@ -20,9 +20,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Apartments', href: '/properties' },
-    { name: 'Experience', href: '/experience' },
-    { name: 'Location', href: '/#location' },
+    { name: 'Residences', href: '/properties' },
+    { name: 'Locations', href: '/#location' },
+    { name: 'Experiences', href: '/experience' },
     { name: 'Gallery', href: '/#gallery' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
@@ -30,15 +30,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-[#080B0E]/95 backdrop-blur-md border-b border-white/10 shadow-2xl py-3.5'
           : 'bg-gradient-to-b from-[#080B0E]/95 via-[#080B0E]/60 to-transparent py-4 sm:py-5'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
+
           {/* Brand Identity */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#DFC7A5] to-[#9E8159] p-[1px] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
@@ -64,11 +63,10 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-xs tracking-[0.18em] uppercase font-medium transition-colors duration-200 py-1 ${
-                    isActive
+                  className={`text-xs tracking-[0.18em] uppercase font-medium transition-colors duration-200 py-1 ${isActive
                       ? 'text-[#DFC7A5] border-b border-[#C5A880]'
                       : 'text-gray-300 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>

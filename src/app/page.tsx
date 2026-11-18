@@ -21,12 +21,12 @@ export default async function HomePage() {
 
   return (
     <div className="bg-[#080B0E] text-white selection:bg-[#C5A880] selection:text-[#080B0E]">
-      
+
       {/* ========================================================================= */}
       {/* 1. HERO VIEWPORT (Full-Screen Architectural Image, Headline, CTAs) */}
       {/* ========================================================================= */}
       <section className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-end px-4 sm:px-8 lg:px-16 pb-16 sm:pb-24 pt-32 overflow-hidden border-b border-white/10">
-        
+
         {/* Full-Screen Architectural Background */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -44,7 +44,7 @@ export default async function HomePage() {
 
         {/* Hero Editorial Typography Container */}
         <div className="relative z-10 max-w-7xl mx-auto w-full space-y-8">
-          
+
           {/* Architectural Monogram & Location Pill */}
           <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-[#0C0F14]/90 border border-white/15 text-xs uppercase tracking-[0.22em] text-[#DFC7A5] backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -108,7 +108,7 @@ export default async function HomePage() {
       {/* ========================================================================= */}
       <section id="apartments" className="py-24 bg-[#0A0D11] border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/10 gap-6">
             <div>
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-mono mb-2">
@@ -160,7 +160,7 @@ export default async function HomePage() {
       {/* ========================================================================= */}
       <section id="gallery" className="py-24 bg-[#080B0E] border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-8 border-b border-white/10 gap-6">
             <div>
               <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-mono mb-2">
@@ -193,7 +193,7 @@ export default async function HomePage() {
       {/* ========================================================================= */}
       {/* 8. AVAILABILITY (Request Availability Calendar-Style Interface) */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-[#0A0D11] border-b border-white/10 relative">
+      <section id="availability" className="py-24 bg-[#0A0D11] border-b border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RequestAvailabilityWidget properties={allProperties} />
         </div>
